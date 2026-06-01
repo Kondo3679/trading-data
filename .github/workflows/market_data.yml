@@ -1,0 +1,15 @@
+{
+  "NVDA": {
+    "ema9": "223.41",
+    "ema20": "221.87",
+    "vwap": "220.14",
+    "atr": "1.23",
+    "rsi": "61.4",
+    "rvol": 3.2,
+    "current_price": "224.36",
+    "ema_signal": "BULLISH",
+    "vwap_position": "ABOVE",
+    "vwap_distance_pct": 1.92
+  },
+  ...
+}
