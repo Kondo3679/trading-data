@@ -1,15 +1,133 @@
-{
-  "NVDA": {
-    "ema9": "223.41",
-    "ema20": "221.87",
-    "vwap": "220.14",
-    "atr": "1.23",
-    "rsi": "61.4",
-    "rvol": 3.2,
-    "current_price": "224.36",
-    "ema_signal": "BULLISH",
-    "vwap_position": "ABOVE",
-    "vwap_distance_pct": 1.92
-  },
-  ...
-}
+name: Fetch Market Data
+
+on:
+  schedule:
+    # Every 5 minutes, Mon-Fri, 9:00am-4:30pm ET (13:00-20:30 UTC)
+    - cron: '*/5 13-20 * * 1-5'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch Technical Data from Twelve Data
+        env:
+          TWELVE_API_KEY: ${{ secrets.TWELVE_API_KEY }}
+        run: |
+          python3 << 'EOF'
+          import urllib.request
+          import json
+          import datetime
+
+          api_key = "$TWELVE_API_KEY"
+
+          # Core symbols — update this list as the watchlist evolves
+          symbols = ["NVDA", "AMD", "META", "MSFT", "AAPL", "AMZN", "SPY", "QQQ", "XLK", "VIX"]
+
+          def fetch(url):
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  with urllib.request.urlopen(req, timeout=10) as r:
+                      return json.loads(r.read())
+              except Exception as e:
+                  return {"error": str(e)}
+
+          def latest_value(response):
+              if "values" in response and response["values"]:
+                  return response["values"][0].get("value", "N/A")
+              return response.get("value", "error")
+
+          data = {}
+          base = "https://api.twelvedata.com"
+
+          for sym in symbols:
+              print(f"Fetching {sym}...")
+              result = {}
+
+              # EMA 9 and EMA 20 (5-min) — entry signal
+              r = fetch(f"{base}/ema?symbol={sym}&interval=5min&time_period=9&apikey={api_key}")
+              result["ema9"] = latest_value(r)
+
+              r = fetch(f"{base}/ema?symbol={sym}&interval=5min&time_period=20&apikey={api_key}")
+              result["ema20"] = latest_value(r)
+
+              # VWAP (5-min) — primary intraday level
+              r = fetch(f"{base}/vwap?symbol={sym}&interval=5min&apikey={api_key}")
+              result["vwap"] = latest_value(r)
+
+              # ATR 14 (5-min) — stop loss calculation
+              r = fetch(f"{base}/atr?symbol={sym}&interval=5min&time_period=14&apikey={api_key}")
+              result["atr"] = latest_value(r)
+
+              # RSI 14 (5-min) — overbought filter
+              r = fetch(f"{base}/rsi?symbol={sym}&interval=5min&time_period=14&apikey={api_key}")
+              result["rsi"] = latest_value(r)
+
+              # Time series — last 20 bars for RVOL calculation
+              r = fetch(f"{base}/time_series?symbol={sym}&interval=5min&outputsize=20&apikey={api_key}")
+              if "values" in r and r["values"]:
+                  bars = r["values"]
+                  current_vol = float(bars[0].get("volume", 0))
+                  avg_vol = sum(float(b.get("volume", 0)) for b in bars[1:]) / max(len(bars) - 1, 1)
+                  result["rvol"] = round(current_vol / avg_vol, 2) if avg_vol > 0 else "N/A"
+                  result["current_price"] = bars[0].get("close", "N/A")
+                  result["current_volume"] = current_vol
+                  result["avg_volume_5min"] = round(avg_vol, 0)
+
+                  # Calculate VWAP manually from bars as backup
+                  tp_vol = sum((float(b["high"]) + float(b["low"]) + float(b["close"])) / 3 * float(b["volume"]) for b in bars)
+                  total_vol = sum(float(b["volume"]) for b in bars)
+                  result["vwap_calculated"] = round(tp_vol / total_vol, 4) if total_vol > 0 else "N/A"
+              else:
+                  result["rvol"] = "N/A"
+                  result["current_price"] = "N/A"
+
+              # EMA crossover signal
+              try:
+                  ema9_val = float(result["ema9"])
+                  ema20_val = float(result["ema20"])
+                  result["ema_signal"] = "BULLISH" if ema9_val > ema20_val else "BEARISH"
+                  result["ema_spread"] = round(ema9_val - ema20_val, 4)
+              except:
+                  result["ema_signal"] = "N/A"
+
+              # VWAP position
+              try:
+                  price = float(result["current_price"])
+                  vwap = float(result["vwap"])
+                  result["vwap_position"] = "ABOVE" if price > vwap else "BELOW"
+                  result["vwap_distance_pct"] = round((price - vwap) / vwap * 100, 2)
+              except:
+                  result["vwap_position"] = "N/A"
+                  result["vwap_distance_pct"] = "N/A"
+
+              data[sym] = result
+
+          # Metadata
+          now = datetime.datetime.utcnow()
+          data["_meta"] = {
+              "updated_utc": now.isoformat(),
+              "updated_et": (now - datetime.timedelta(hours=4)).strftime("%Y-%m-%d %H:%M ET"),
+              "source": "Twelve Data API",
+              "interval": "5min"
+          }
+
+          with open("market_data.json", "w") as f:
+              json.dump(data, f, indent=2)
+
+          print(f"Done. Updated {len(symbols)} symbols at {now.isoformat()}")
+          EOF
+
+      - name: Commit and push data
+        run: |
+          git config --global user.email "marketbot@trading.ai"
+          git config --global user.name "Market Data Bot"
+          git add market_data.json
+          git diff --staged --quiet || git commit -m "Market data update $(date -u '+%H:%M UTC')"
+          git push
