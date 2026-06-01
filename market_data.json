@@ -146,8 +146,8 @@
     "vwap_distance_pct": "N/A"
   },
   "_meta": {
-    "updated_utc": "2026-06-01T23:15:55.775073",
-    "updated_et": "2026-06-01 19:15 ET",
+    "updated_utc": "2026-06-01T23:27:09.583251",
+    "updated_et": "2026-06-01 19:27 ET",
     "source": "Twelve Data API",
     "interval": "5min",
     "symbols": [
