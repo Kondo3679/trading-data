@@ -1,25 +1,30 @@
 {
   "NVDA": {
-    "ema9": "error",
-    "ema20": "error",
-    "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
-    "rvol": "N/A",
-    "current_price": "N/A",
+    "ema9": "N/A",
+    "ema20": "N/A",
+    "vwap": "N/A",
+    "atr": "N/A",
+    "rsi": "N/A",
+    "rvol": 3.5,
+    "current_price": "224.42000",
+    "current_volume": 5393188.0,
+    "avg_volume_5min": 1541290.0,
+    "vwap_calculated": 224.0006,
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
   "AMD": {
-    "ema9": "error",
-    "ema20": "error",
+    "ema9": "N/A",
+    "ema20": "N/A",
     "vwap": "error",
     "atr": "error",
     "rsi": "error",
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -32,6 +37,7 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -44,6 +50,7 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -56,6 +63,7 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -68,6 +76,7 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -80,6 +89,7 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -92,6 +102,7 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
@@ -104,10 +115,11 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
-  "VIX": {
+  "XLV": {
     "ema9": "error",
     "ema20": "error",
     "vwap": "error",
@@ -116,13 +128,40 @@
     "rvol": "N/A",
     "current_price": "N/A",
     "ema_signal": "N/A",
+    "ema_spread": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "XLE": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
   "_meta": {
-    "updated_utc": "2026-06-01T23:10:55.591360",
-    "updated_et": "2026-06-01 19:10 ET",
+    "updated_utc": "2026-06-01T23:15:55.775073",
+    "updated_et": "2026-06-01 19:15 ET",
     "source": "Twelve Data API",
-    "interval": "5min"
+    "interval": "5min",
+    "symbols": [
+      "NVDA",
+      "AMD",
+      "META",
+      "MSFT",
+      "AAPL",
+      "AMZN",
+      "SPY",
+      "QQQ",
+      "XLK",
+      "XLV",
+      "XLE"
+    ]
   }
 }
