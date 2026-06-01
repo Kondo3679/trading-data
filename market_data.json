@@ -1,0 +1,128 @@
+{
+  "NVDA": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "AMD": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "META": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "MSFT": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "AAPL": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "AMZN": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "SPY": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "QQQ": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "XLK": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "VIX": {
+    "ema9": "error",
+    "ema20": "error",
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "ema_signal": "N/A",
+    "vwap_position": "N/A",
+    "vwap_distance_pct": "N/A"
+  },
+  "_meta": {
+    "updated_utc": "2026-06-01T23:10:55.591360",
+    "updated_et": "2026-06-01 19:10 ET",
+    "source": "Twelve Data API",
+    "interval": "5min"
+  }
+}
