@@ -20,15 +20,19 @@ jobs:
         env:
           TWELVE_API_KEY: ${{ secrets.TWELVE_API_KEY }}
         run: |
-          python3 << 'EOF'
+          python3 - <<PYEOF
           import urllib.request
           import json
           import datetime
+          import os
 
           api_key = os.environ.get("TWELVE_API_KEY", "")
+          if not api_key:
+              print("ERROR: TWELVE_API_KEY secret is not set")
+              exit(1)
 
-          # Core symbols — update this list as the watchlist evolves
-          symbols = ["NVDA", "AMD", "META", "MSFT", "AAPL", "AMZN", "SPY", "QQQ", "XLK", "VIX"]
+          # Core symbols — update as watchlist evolves
+          symbols = ["NVDA", "AMD", "META", "MSFT", "AAPL", "AMZN", "SPY", "QQQ", "XLK", "XLV", "XLE"]
 
           def fetch(url):
               try:
@@ -50,26 +54,26 @@ jobs:
               print(f"Fetching {sym}...")
               result = {}
 
-              # EMA 9 and EMA 20 (5-min) — entry signal
+              # EMA 9 and EMA 20 (5-min)
               r = fetch(f"{base}/ema?symbol={sym}&interval=5min&time_period=9&apikey={api_key}")
               result["ema9"] = latest_value(r)
 
               r = fetch(f"{base}/ema?symbol={sym}&interval=5min&time_period=20&apikey={api_key}")
               result["ema20"] = latest_value(r)
 
-              # VWAP (5-min) — primary intraday level
+              # VWAP (5-min)
               r = fetch(f"{base}/vwap?symbol={sym}&interval=5min&apikey={api_key}")
               result["vwap"] = latest_value(r)
 
-              # ATR 14 (5-min) — stop loss calculation
+              # ATR 14 (5-min)
               r = fetch(f"{base}/atr?symbol={sym}&interval=5min&time_period=14&apikey={api_key}")
               result["atr"] = latest_value(r)
 
-              # RSI 14 (5-min) — overbought filter
+              # RSI 14 (5-min)
               r = fetch(f"{base}/rsi?symbol={sym}&interval=5min&time_period=14&apikey={api_key}")
               result["rsi"] = latest_value(r)
 
-              # Time series — last 20 bars for RVOL calculation
+              # Time series — last 20 bars for RVOL + current price
               r = fetch(f"{base}/time_series?symbol={sym}&interval=5min&outputsize=20&apikey={api_key}")
               if "values" in r and r["values"]:
                   bars = r["values"]
@@ -81,9 +85,12 @@ jobs:
                   result["avg_volume_5min"] = round(avg_vol, 0)
 
                   # Calculate VWAP manually from bars as backup
-                  tp_vol = sum((float(b["high"]) + float(b["low"]) + float(b["close"])) / 3 * float(b["volume"]) for b in bars)
-                  total_vol = sum(float(b["volume"]) for b in bars)
-                  result["vwap_calculated"] = round(tp_vol / total_vol, 4) if total_vol > 0 else "N/A"
+                  try:
+                      tp_vol = sum((float(b["high"]) + float(b["low"]) + float(b["close"])) / 3 * float(b["volume"]) for b in bars)
+                      total_vol = sum(float(b["volume"]) for b in bars)
+                      result["vwap_calculated"] = round(tp_vol / total_vol, 4) if total_vol > 0 else "N/A"
+                  except:
+                      result["vwap_calculated"] = "N/A"
               else:
                   result["rvol"] = "N/A"
                   result["current_price"] = "N/A"
@@ -96,8 +103,9 @@ jobs:
                   result["ema_spread"] = round(ema9_val - ema20_val, 4)
               except:
                   result["ema_signal"] = "N/A"
+                  result["ema_spread"] = "N/A"
 
-              # VWAP position
+              # VWAP position and distance
               try:
                   price = float(result["current_price"])
                   vwap = float(result["vwap"])
@@ -108,6 +116,7 @@ jobs:
                   result["vwap_distance_pct"] = "N/A"
 
               data[sym] = result
+              print(f"  {sym}: price={result.get('current_price')} ema_signal={result.get('ema_signal')} rvol={result.get('rvol')}")
 
           # Metadata
           now = datetime.datetime.utcnow()
@@ -115,14 +124,15 @@ jobs:
               "updated_utc": now.isoformat(),
               "updated_et": (now - datetime.timedelta(hours=4)).strftime("%Y-%m-%d %H:%M ET"),
               "source": "Twelve Data API",
-              "interval": "5min"
+              "interval": "5min",
+              "symbols": symbols
           }
 
           with open("market_data.json", "w") as f:
               json.dump(data, f, indent=2)
 
-          print(f"Done. Updated {len(symbols)} symbols at {now.isoformat()}")
-          EOF
+          print(f"Done. Wrote market_data.json for {len(symbols)} symbols at {now.isoformat()}")
+          PYEOF
 
       - name: Commit and push data
         run: |
