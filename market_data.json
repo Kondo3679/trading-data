@@ -5,11 +5,11 @@
     "vwap": "N/A",
     "atr": "N/A",
     "rsi": "N/A",
-    "rvol": 3.5,
-    "current_price": "224.42000",
-    "current_volume": 5393188.0,
-    "avg_volume_5min": 1541290.0,
-    "vwap_calculated": 224.0006,
+    "rvol": 3.57,
+    "current_price": "222.82001",
+    "current_volume": 4578870.0,
+    "avg_volume_5min": 1281521.0,
+    "vwap_calculated": 222.6461,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -146,8 +146,8 @@
     "vwap_distance_pct": "N/A"
   },
   "_meta": {
-    "updated_utc": "2026-06-01T23:27:09.583251",
-    "updated_et": "2026-06-01 19:27 ET",
+    "updated_utc": "2026-06-02T22:13:16.460300",
+    "updated_et": "2026-06-02 18:13 ET",
     "source": "Twelve Data API",
     "interval": "5min",
     "symbols": [
