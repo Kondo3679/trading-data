@@ -1,27 +1,14 @@
 {
   "NVDA": {
     "ema9": "N/A",
-    "ema20": "error",
-    "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
-    "rvol": "N/A",
-    "current_price": "N/A",
-    "vwap_calculated": "N/A",
-    "ema_signal": "N/A",
-    "ema_spread": "N/A",
-    "vwap_position": "N/A",
-    "vwap_distance_pct": "N/A"
-  },
-  "AMD": {
-    "ema9": "N/A",
-    "ema20": "error",
-    "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
-    "rvol": "N/A",
-    "current_price": "N/A",
-    "vwap_calculated": "N/A",
+    "ema20": "N/A",
+    "vwap": "N/A",
+    "atr": "N/A",
+    "rsi": "N/A",
+    "rvol": 0.27,
+    "current_price": "215.67",
+    "current_volume": 17882.0,
+    "vwap_calculated": 215.6321,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -29,7 +16,7 @@
   },
   "SPY": {
     "ema9": "N/A",
-    "ema20": "error",
+    "ema20": "N/A",
     "vwap": "error",
     "atr": "error",
     "rsi": "error",
@@ -42,21 +29,7 @@
     "vwap_distance_pct": "N/A"
   },
   "XLK": {
-    "ema9": "N/A",
-    "ema20": "error",
-    "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
-    "rvol": "N/A",
-    "current_price": "N/A",
-    "vwap_calculated": "N/A",
-    "ema_signal": "N/A",
-    "ema_spread": "N/A",
-    "vwap_position": "N/A",
-    "vwap_distance_pct": "N/A"
-  },
-  "META": {
-    "ema9": "N/A",
+    "ema9": "error",
     "ema20": "error",
     "vwap": "error",
     "atr": "error",
@@ -82,99 +55,18 @@
       "value": "N/A",
       "date": "N/A"
     },
-    "breakeven_inflation": {
-      "value": "N/A",
-      "date": "N/A"
-    },
     "vix_regime": "NORMAL"
   },
-  "_sentiment": {
-    "fear_greed_score": "N/A",
-    "fear_greed_rating": "N/A",
-    "signal": "N/A"
-  },
-  "_congress": {
-    "recent_purchases": [],
-    "error": "Expecting value: line 1 column 1 (char 0)"
-  },
-  "_edgar": {
-    "latest_8k_count": 15,
-    "filings": [
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      },
-      {
-        "company": "N/A",
-        "filed": "2026-06-03"
-      }
-    ]
-  },
   "_meta": {
-    "updated_utc": "2026-06-03T18:17:05.290726",
-    "updated_et": "2026-06-03 14:17 ET",
-    "source": "Twelve Data + FRED + CNN Fear&Greed + Quiver Congress + SEC EDGAR",
-    "interval": "5min",
-    "core_symbols": [
+    "updated_utc": "2026-06-03T18:22:22.327784+00:00",
+    "updated_et": "2026-06-03 14:22 ET",
+    "source": "Twelve Data + FRED",
+    "symbols": [
       "NVDA",
-      "AMD",
       "SPY",
-      "XLK",
-      "META"
+      "XLK"
     ],
-    "api_calls_this_run": 30,
-    "daily_limit": 800
+    "credits_this_run": 18,
+    "daily_budget": 800
   }
 }
