@@ -5,10 +5,10 @@
     "vwap": "N/A",
     "atr": "N/A",
     "rsi": "N/A",
-    "rvol": 3.48,
-    "current_price": "199.089996",
-    "current_volume": 5077688.0,
-    "vwap_calculated": 197.7256,
+    "rvol": 1.41,
+    "current_price": "194.37",
+    "current_volume": 228480.0,
+    "vwap_calculated": 194.5583,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -17,21 +17,22 @@
   "SPY": {
     "ema9": "N/A",
     "ema20": "N/A",
-    "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
-    "rvol": "N/A",
-    "current_price": "N/A",
-    "vwap_calculated": "N/A",
+    "vwap": "N/A",
+    "atr": "N/A",
+    "rsi": "N/A",
+    "rvol": 1.33,
+    "current_price": "732.4",
+    "current_volume": 108800.0,
+    "vwap_calculated": 733.3103,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
   "XLK": {
-    "ema9": "error",
-    "ema20": "error",
-    "vwap": "error",
+    "ema9": "N/A",
+    "ema20": "N/A",
+    "vwap": "N/A",
     "atr": "error",
     "rsi": "error",
     "rvol": "N/A",
@@ -44,8 +45,8 @@
   },
   "_macro": {
     "vix": {
-      "value": "19.49",
-      "date": "2026-06-23"
+      "value": "18.63",
+      "date": "2026-06-24"
     },
     "treasury_10y": {
       "value": "4.5",
@@ -58,8 +59,8 @@
     "vix_regime": "NORMAL"
   },
   "_meta": {
-    "updated_utc": "2026-06-24T23:45:46.559670+00:00",
-    "updated_et": "2026-06-24 19:45 ET",
+    "updated_utc": "2026-06-25T19:31:12.274475+00:00",
+    "updated_et": "2026-06-25 15:31 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
