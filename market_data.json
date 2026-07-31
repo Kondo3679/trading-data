@@ -5,10 +5,10 @@
     "vwap": "N/A",
     "atr": "N/A",
     "rsi": "N/A",
-    "rvol": 5.52,
-    "current_price": "200.66",
-    "current_volume": 2367602.0,
-    "vwap_calculated": 200.4585,
+    "rvol": 5.86,
+    "current_price": "200.81000",
+    "current_volume": 8806297.0,
+    "vwap_calculated": 200.3664,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -58,8 +58,8 @@
     "vix_regime": "NORMAL"
   },
   "_meta": {
-    "updated_utc": "2026-07-31T20:22:18.804971+00:00",
-    "updated_et": "2026-07-31 16:22 ET",
+    "updated_utc": "2026-07-31T21:39:48.280670+00:00",
+    "updated_et": "2026-07-31 17:39 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
