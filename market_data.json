@@ -5,10 +5,10 @@
     "vwap": "N/A",
     "atr": "N/A",
     "rsi": "N/A",
-    "rvol": 0.64,
-    "current_price": "221.69",
-    "current_volume": 82596.0,
-    "vwap_calculated": 221.2868,
+    "rvol": 4.14,
+    "current_price": "219.02",
+    "current_volume": 920827.0,
+    "vwap_calculated": 220.942,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -48,18 +48,18 @@
       "date": "2026-08-04"
     },
     "treasury_10y": {
-      "value": "4.7000000000",
-      "date": "2026-08-03"
+      "value": "4.6300000000",
+      "date": "2026-08-04"
     },
     "fed_funds_rate": {
       "value": "3.6300000000",
-      "date": "2026-08-03"
+      "date": "2026-08-04"
     },
     "vix_regime": "NORMAL"
   },
   "_meta": {
-    "updated_utc": "2026-08-05T18:54:17.787099+00:00",
-    "updated_et": "2026-08-05 14:54 ET",
+    "updated_utc": "2026-08-05T20:34:52.385207+00:00",
+    "updated_et": "2026-08-05 16:34 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
