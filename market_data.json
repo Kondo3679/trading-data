@@ -48,18 +48,18 @@
       "date": "2026-08-13"
     },
     "treasury_10y": {
-      "value": "4.6800000000",
-      "date": "2026-08-12"
+      "value": "4.6300000000",
+      "date": "2026-08-13"
     },
     "fed_funds_rate": {
       "value": "3.6300000000",
-      "date": "2026-08-12"
+      "date": "2026-08-13"
     },
     "vix_regime": "CALM"
   },
   "_meta": {
-    "updated_utc": "2026-08-14T20:15:56.706362+00:00",
-    "updated_et": "2026-08-14 16:15 ET",
+    "updated_utc": "2026-08-14T20:56:46.881738+00:00",
+    "updated_et": "2026-08-14 16:56 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
