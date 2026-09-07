@@ -31,13 +31,12 @@
   "XLK": {
     "ema9": "error",
     "ema20": "error",
-    "vwap": "N/A",
-    "atr": "N/A",
-    "rsi": "N/A",
-    "rvol": 6.91,
-    "current_price": "187.28999",
-    "current_volume": 393385.0,
-    "vwap_calculated": 187.0421,
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "vwap_calculated": "N/A",
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -59,8 +58,8 @@
     "vix_regime": "CALM"
   },
   "_meta": {
-    "updated_utc": "2026-09-04T21:42:03.827096+00:00",
-    "updated_et": "2026-09-04 17:42 ET",
+    "updated_utc": "2026-09-07T18:10:21.720992+00:00",
+    "updated_et": "2026-09-07 14:10 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
