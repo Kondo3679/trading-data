@@ -5,10 +5,10 @@
     "vwap": "N/A",
     "atr": "N/A",
     "rsi": "N/A",
-    "rvol": 0.24,
-    "current_price": "212.15",
-    "current_volume": 2979.0,
-    "vwap_calculated": 212.3266,
+    "rvol": 7.2,
+    "current_price": "210.89000",
+    "current_volume": 6595997.0,
+    "vwap_calculated": 211.8573,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -17,13 +17,12 @@
   "SPY": {
     "ema9": "N/A",
     "ema20": "N/A",
-    "vwap": "N/A",
-    "atr": "N/A",
-    "rsi": "N/A",
-    "rvol": 0.12,
-    "current_price": "762.14",
-    "current_volume": 1072.0,
-    "vwap_calculated": 762.5362,
+    "vwap": "error",
+    "atr": "error",
+    "rsi": "error",
+    "rvol": "N/A",
+    "current_price": "N/A",
+    "vwap_calculated": "N/A",
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -49,18 +48,18 @@
       "date": "2026-09-11"
     },
     "treasury_10y": {
-      "value": "4.95",
-      "date": "2026-09-10"
+      "value": "4.96",
+      "date": "2026-09-11"
     },
     "fed_funds_rate": {
       "value": "3.63",
-      "date": "2026-09-10"
+      "date": "2026-09-11"
     },
     "vix_regime": "NORMAL"
   },
   "_meta": {
-    "updated_utc": "2026-09-14T18:27:09.941995+00:00",
-    "updated_et": "2026-09-14 14:27 ET",
+    "updated_utc": "2026-09-14T21:58:24.706140+00:00",
+    "updated_et": "2026-09-14 17:58 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
