@@ -5,10 +5,10 @@
     "vwap": "N/A",
     "atr": "N/A",
     "rsi": "N/A",
-    "rvol": 0.69,
-    "current_price": "229.25",
-    "current_volume": 13475.0,
-    "vwap_calculated": 229.1586,
+    "rvol": 5.95,
+    "current_price": "228.87",
+    "current_volume": 175501.0,
+    "vwap_calculated": 229.3278,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -18,22 +18,23 @@
     "ema9": "N/A",
     "ema20": "N/A",
     "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
-    "rvol": "N/A",
-    "current_price": "N/A",
-    "vwap_calculated": "N/A",
+    "atr": "N/A",
+    "rsi": "N/A",
+    "rvol": 6.05,
+    "current_price": "773.44",
+    "current_volume": 112537.0,
+    "vwap_calculated": 774.2054,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
     "vwap_distance_pct": "N/A"
   },
   "XLK": {
-    "ema9": "error",
-    "ema20": "error",
-    "vwap": "error",
-    "atr": "error",
-    "rsi": "error",
+    "ema9": "N/A",
+    "ema20": "N/A",
+    "vwap": "N/A",
+    "atr": "N/A",
+    "rsi": "N/A",
     "rvol": "N/A",
     "current_price": "N/A",
     "vwap_calculated": "N/A",
@@ -48,18 +49,18 @@
       "date": "2026-09-21"
     },
     "treasury_10y": {
-      "value": "5.01",
-      "date": "2026-09-18"
+      "value": "4.96",
+      "date": "2026-09-21"
     },
     "fed_funds_rate": {
       "value": "3.88",
-      "date": "2026-09-18"
+      "date": "2026-09-21"
     },
     "vix_regime": "CALM"
   },
   "_meta": {
-    "updated_utc": "2026-09-22T17:34:21.944600+00:00",
-    "updated_et": "2026-09-22 13:34 ET",
+    "updated_utc": "2026-09-22T20:29:06.420184+00:00",
+    "updated_et": "2026-09-22 16:29 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
