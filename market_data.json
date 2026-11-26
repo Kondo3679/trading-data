@@ -8,7 +8,7 @@
     "rvol": 3.94,
     "current_price": "149.28999",
     "current_volume": 9834039.0,
-    "vwap_calculated": 148.3331,
+    "vwap_calculated": 148.3334,
     "ema_signal": "N/A",
     "ema_spread": "N/A",
     "vwap_position": "N/A",
@@ -58,8 +58,8 @@
     "vix_regime": "HIGH"
   },
   "_meta": {
-    "updated_utc": "2026-11-25T22:13:56.936616+00:00",
-    "updated_et": "2026-11-25 18:13 ET",
+    "updated_utc": "2026-11-26T22:10:59.863722+00:00",
+    "updated_et": "2026-11-26 18:10 ET",
     "source": "Twelve Data + FRED",
     "symbols": [
       "NVDA",
